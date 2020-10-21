@@ -1,11 +1,11 @@
 {
   "name": "@hyperobjekt/mapbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "module": "src/index.js",
   "dependencies": {
-    "@hyperobjekt/hooks": "^1.0.1",
-    "@hyperobjekt/us-states": "^1.0.1",
+    "@hyperobjekt/hooks": "^1.0.2",
+    "@hyperobjekt/us-states": "^1.0.2",
     "@turf/bbox": "^6.0.1",
     "clsx": "^1.1.1",
     "d3-ease": "^2.0.0",

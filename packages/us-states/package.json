@@ -1,6 +1,6 @@
 {
   "name": "@hyperobjekt/us-states",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "module": "src/index.js",
   "gitHead": "f487865cf7ad733b282b4106f4c2cb4cd2634993"
