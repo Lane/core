@@ -7,7 +7,8 @@
     "dev": "start-storybook -p 5555",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "workspaces": [
     "packages/*"
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
-    "@storybook/addon-essentials": "^6.0.26"
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/storybook-deployer": "^2.8.7"
   }
 }

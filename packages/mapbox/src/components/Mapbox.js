@@ -19,6 +19,22 @@ import shallow from 'zustand/shallow'
 
 /**
  * A component for rendering an interactive Mapbox map based off of [ReactMapGL](https://github.com/visgl/react-map-gl)
+ * 
+ * To use this component add it to your project
+ * 
+ * ```
+ * npm install @hyperobjekt/mapbox
+ * ```
+ * or
+ * ```
+ * yarn add @hyperobjekt/mapbox
+ * ```
+ * 
+ * Then import it into your project with:
+ * 
+ * ```
+ * import Mapbox from "@hyperobjekt/mapbox"
+ * ```
  */
 const Mapbox = ({
   mapStyle,
