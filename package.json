@@ -1,0 +1,44 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "coverage": "jest --coverage",
+    "unit": "jest",
+    "dev": "start-storybook -p 5555",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@storybook/addon-docs": "^6.0.26",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.26",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^26.6.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "jest": "^26.6.0",
+    "jest-haste-map": "^26.6.0",
+    "jest-resolve": "^26.6.0",
+    "jest-styled-components": "^7.0.3",
+    "lerna": "^3.22.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-test-renderer": "^17.0.0",
+    "styled-components": "^5.2.0",
+    "webpack": "4.44.2"
+  },
+  "resolutions": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0"
+  }
+}
