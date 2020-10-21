@@ -11,6 +11,12 @@ export const getStateCenters = () => STATE_CENTERS
 export const getStateShapes = () => STATE_SHAPES
 
 /**
+ * Returns state data for the given fips
+ * @param {*} fips 
+ */
+export const getStateFromFips = (fips) => STATES[fips]
+
+/**
  * Gets the property for the given identifier.
  * @param {string} id identifier for any geography
  * @param {string} prop property name to get from the states object
