@@ -1,6 +1,6 @@
 export default {
   version: 8,
-  name: 'seda',
+  name: 'hyperobjekt',
   sources: {
     composite: {
       url: 'mapbox://mapbox.mapbox-streets-v8',
@@ -2557,130 +2557,6 @@ export default {
           32
         ],
         'line-color': 'hsl(0, 0%, 100%)'
-      }
-    },
-    // {
-    //   id: 'states-fills',
-    //   type: 'fill',
-    //   source: 'composite',
-    //   'source-layer': 'states',
-    //   paint: {
-    //     'fill-color': '#ccc',
-    //     'fill-opacity': 0
-    //   }
-    // },
-    // {
-    //   id: 'states-outlines',
-    //   type: 'line',
-    //   source: 'composite',
-    //   'source-layer': 'states',
-    //   layout: { 'line-join': 'round', 'line-cap': 'round' },
-    //   paint: {
-    //     'line-width': [
-    //       'interpolate',
-    //       ['linear'],
-    //       ['zoom'],
-    //       1,
-    //       0.5,
-    //       4,
-    //       0.75,
-    //       5,
-    //       0
-    //     ],
-    //     'line-opacity': [
-    //       'interpolate',
-    //       ['linear'],
-    //       ['zoom'],
-    //       2,
-    //       0,
-    //       4,
-    //       1,
-    //       5,
-    //       0
-    //     ],
-    //     'line-color': '#061d56'
-    //   }
-    // },
-    {
-      id: 'admin-1-boundary-bg',
-      type: 'line',
-      metadata: { 'mapbox:group': '1444934295202.7542' },
-      source: 'seda',
-      'source-layer': 'states',
-      layout: { 'line-join': 'bevel' },
-      paint: {
-        'line-blur': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          3,
-          0,
-          12,
-          5
-        ],
-        'line-width': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          2,
-          0.5,
-          4.4,
-          1,
-          8,
-          3.75,
-          12,
-          5.5
-        ],
-        'line-opacity': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          4,
-          0,
-          12,
-          0.5
-        ],
-        'line-dasharray': [1, 0],
-        'line-translate': [0, 0],
-        'line-color': '#061d56'
-      }
-    },
-    {
-      id: 'admin-1-boundary',
-      type: 'line',
-      metadata: { 'mapbox:group': '1444934295202.7542' },
-      source: 'seda',
-      'source-layer': 'states',
-      layout: { 'line-join': 'round', 'line-cap': 'round' },
-      paint: {
-        'line-dasharray': [
-          'step',
-          ['zoom'],
-          ['literal', [2, 0]],
-          7,
-          ['literal', [2, 2, 6, 2]]
-        ],
-        'line-width': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          2,
-          0.5,
-          4,
-          0.75,
-          12,
-          1.5
-        ],
-        'line-opacity': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          4,
-          0.5,
-          4.5,
-          1
-        ],
-        'line-color': '#061d56'
       }
     },
     {

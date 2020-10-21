@@ -56,6 +56,8 @@ const [useMapStore] = create((set, get) => ({
   loaded: false,
   resetViewport: { ...DEFAULT_VIEWPORT },
   viewport: DEFAULT_VIEWPORT,
+  hoveredFeature: null,
+  setHoveredFeature: hoveredFeature => set({ hoveredFeature }),
   setViewport: viewport =>
     set(state => {
       const newViewport = {

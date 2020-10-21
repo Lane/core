@@ -10,5 +10,6 @@ export {
   getStateSelectOptions,
   getStateFipsFromAbbr,
   getStatePropByAbbr,
-  getAllStates
+  getAllStates,
+  getStateFromFips
 } from "./selectors"

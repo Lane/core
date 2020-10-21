@@ -1,6 +1,6 @@
 # Components
 
-## `<MapBase />`
+## `<Mapbox />`
 
 ### Props
 
