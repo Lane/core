@@ -27,6 +27,16 @@ This will start the storybook interface where you may develop your components.
 yarn build
 ```
 
+### Publishing to npm
+
+To publish new versions of packages with changed, run:
+
+```
+yarn publish
+```
+
+> Note: if you are publishing a new package, you will have to run the first publish manually by navigating to the package directory and running `npm publish --access public` to specify it is a public package.
+
 ## Attributions
 
 This repository has been based on the article [Creating a Monorepo with Lerna & Yarn Workspaces](https://leerob.io/blog/monorepo-lerna-yarn-workspaces).
