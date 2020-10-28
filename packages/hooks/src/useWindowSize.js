@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 /**
  * Returns the window size in the browser
  * Pulled from: https://usehooks.com/useWindowSize/
