@@ -11,5 +11,11 @@ export {
   getStateFipsFromAbbr,
   getStatePropByAbbr,
   getAllStates,
-  getStateFromFips
-} from "./selectors"
+  getStateFromFips,
+  getStatesArray,
+} from "./selectors";
+export {
+  STATES,
+  STATE_CENTERS as STATES_GEOJSON_CENTERS,
+  STATE_SHAPES as STATES_GEOJSON,
+} from "./constants";

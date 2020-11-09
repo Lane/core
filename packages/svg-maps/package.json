@@ -1,0 +1,25 @@
+{
+  "name": "@hyperobjekt/svg-maps",
+  "version": "1.0.0",
+  "description": "simple svg maps for hyperobjekt projects",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "resolutions": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "author": "Lane Olson <laneolson@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@hyperobjekt/us-states": "^1.0.3",
+    "@material-ui/styles": "^4.10.0",
+    "clsx": "^1.1.1",
+    "d3-geo": "^2.0.1",
+    "react-simple-maps": "^2.3.0",
+    "zustand": "^3.1.3"
+  }
+}
