@@ -6,30 +6,34 @@ import { Geography } from "react-simple-maps";
 
 const styles = {
   root: {},
-  geography: {
+  shape: {
     fill: "#eee",
     stroke: "#fff",
   },
   hovered: {
     fill: "#f6f6f6",
   },
+  selected: {},
 };
 
 const Shapes = ({
   classes,
   className,
+  selected,
   hovered,
   geographies,
   onHover,
   onSelect,
+  children,
   ...props
 }) => {
   return (
     <g className={clsx("svg-map__shapes", classes.root, className)} {...props}>
       {geographies.map((geo) => (
         <Geography
-          className={clsx("svg-map__geography", classes.geography, {
+          className={clsx("svg-map__geography", classes.shape, {
             [classes.hovered]: hovered && geo.rsmKey === hovered.rsmKey,
+            [classes.selected]: selected && geo.rsmKey === selected.rsmKey,
           })}
           key={geo.rsmKey}
           geography={geo}
@@ -44,6 +48,7 @@ const Shapes = ({
           }}
         />
       ))}
+      {children}
     </g>
   );
 };
@@ -61,4 +66,4 @@ Shapes.propTypes = {
   onSelect: PropTypes.func,
 };
 
-export default withStyles(styles, { name: "HypBaseShapes" })(Shapes);
+export default withStyles(styles, { name: "HypSvgMapShapes" })(Shapes);

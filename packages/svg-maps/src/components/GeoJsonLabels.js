@@ -1,26 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import clsx from "clsx";
 import { geoCentroid } from "d3-geo";
 import { Marker, Annotation } from "react-simple-maps";
-import { getStatesArray } from "@hyperobjekt/us-states";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/styles";
 
-const allStates = getStatesArray().map((s) => ({ id: s.abbr, val: s.id }));
-
-const defaultOffsets = {
-  VT: [50, -8],
-  NH: [34, 2],
-  MA: [30, -1],
-  RI: [28, 2],
-  CT: [35, 10],
-  NJ: [34, 1],
-  DE: [33, 0],
-  MD: [47, 10],
-  DC: [49, 21],
-};
-
-export const styles = {
-  root: {},
+const styles = {
+  root: { pointerEvents: "none" },
   label: {},
   marker: {},
   annotation: {
@@ -35,27 +21,32 @@ export const styles = {
   },
 };
 
-const StateLabels = ({
-  geographies,
-  offsets = defaultOffsets,
+function GeoJsonLabels({
+  geographies = [],
   classes,
   className,
+  metadata,
+  metadataSelector,
+  labelSelector = (d) => d && d.id,
+  offsetSelector = (d) => d && d.offset,
   ...props
-}) => {
+}) {
   return (
     <g className={clsx("svg-map__labels", classes.root, className)} {...props}>
       {geographies.map((geo) => {
         const centroid = geoCentroid(geo);
-        const cur = allStates.find((s) => s.val === geo.id);
+        const selector = metadata && metadataSelector && metadataSelector(geo);
+        const cur = selector ? metadata.find(selector) : geo;
+        const offset = offsetSelector(cur);
+        const label = labelSelector(cur);
+        const valid = cur && centroid[0] > -160 && centroid[0] < -67;
         return (
           <g
             key={geo.rsmKey + "-name"}
             className={clsx("svg-map__label", classes.label)}
           >
-            {cur &&
-              centroid[0] > -160 &&
-              centroid[0] < -67 &&
-              (Object.keys(offsets).indexOf(cur.id) === -1 ? (
+            {valid &&
+              (!offset ? (
                 <Marker
                   className={clsx("svg-map__marker", classes.marker)}
                   coordinates={centroid}
@@ -65,14 +56,14 @@ const StateLabels = ({
                     y="2"
                     textAnchor="middle"
                   >
-                    {cur.id}
+                    {label}
                   </text>
                 </Marker>
               ) : (
                 <Annotation
                   subject={centroid}
-                  dx={offsets[cur.id][0]}
-                  dy={offsets[cur.id][1]}
+                  dx={offset[0]}
+                  dy={offset[1]}
                   className={clsx("svg-map__annotation", classes.annotation)}
                 >
                   <text
@@ -80,7 +71,7 @@ const StateLabels = ({
                     x={4}
                     alignmentBaseline="middle"
                   >
-                    {cur.id}
+                    {label}
                   </text>
                 </Annotation>
               ))}
@@ -89,6 +80,18 @@ const StateLabels = ({
       })}
     </g>
   );
+}
+
+GeoJsonLabels.propTypes = {
+  geographies: PropTypes.array,
+  classes: PropTypes.object,
+  className: PropTypes.string,
+  metadata: PropTypes.array,
+  metadataSelector: PropTypes.func,
+  labelSelector: PropTypes.func,
+  offsetSelector: PropTypes.func,
 };
 
-export default withStyles(styles, { name: "HypStateMapLabels" })(StateLabels);
+export default withStyles(styles, { name: "HypSvgMapGeoJsonLabels" })(
+  GeoJsonLabels
+);
