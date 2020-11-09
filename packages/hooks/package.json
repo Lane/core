@@ -3,10 +3,6 @@
   "version": "1.0.8",
   "main": "lib/index.js",
   "module": "src/index.js",
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
