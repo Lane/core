@@ -1,6 +1,6 @@
 {
   "name": "@hyperobjekt/svg-maps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple svg maps for hyperobjekt projects",
   "main": "src/index.js",
   "module": "src/index.js",
@@ -15,7 +15,7 @@
   "author": "Lane Olson <laneolson@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@hyperobjekt/us-states": "^1.0.3",
+    "@hyperobjekt/us-states": "^1.0.4",
     "@material-ui/styles": "^4.10.0",
     "clsx": "^1.1.1",
     "d3-geo": "^2.0.1",
