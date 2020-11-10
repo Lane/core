@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import SvgMap from "../SvgMap";
 import StateLayer from "./StateLayer";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/styles";
 
 const styles = {};
 
