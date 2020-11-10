@@ -1,2 +1,2 @@
-export { default as SvgMap } from "./components/SvgMap";
-export { default as StateMap } from "./components/states/StateMap";
+export { SvgMap } from "./components/SvgMap";
+export { StateMap } from "./components/states/StateMap";

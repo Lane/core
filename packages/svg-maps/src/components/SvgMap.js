@@ -30,6 +30,8 @@ SvgMap.propTypes = {
   className: PropTypes.string,
 };
 
+export { SvgMap };
+
 /** add the display name */
 const exportComponent = withStyles(styles, { name: "HypSvgMap" })(SvgMap);
 exportComponent.displayName = "SvgMap";
