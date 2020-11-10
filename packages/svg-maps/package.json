@@ -2,8 +2,8 @@
   "name": "@hyperobjekt/svg-maps",
   "version": "1.0.2",
   "description": "simple svg maps for hyperobjekt projects",
-  "main": "src/index.js",
-  "module": "src/index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
