@@ -56,6 +56,7 @@ const StateMap = ({
     ...remainingClasses
   },
   className,
+  children,
   ...props
 }) => {
   return (
@@ -74,6 +75,7 @@ const StateMap = ({
         interactive={interactive}
         {...layerProps}
       />
+      {children}
     </SvgMap>
   );
 };
