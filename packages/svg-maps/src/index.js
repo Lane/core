@@ -1,2 +1,10 @@
-export { SvgMap } from "./components/SvgMap";
-export { StateMap } from "./components/states/StateMap";
+export { default as SvgMap } from "./components/SvgMap";
+export { default as StateMap } from "./components/states/StateMap";
+export { default as HoverShape } from "./components/HoverShape";
+export { default as GeoJsonLayer } from "./components/GeoJsonLayer";
+export { default as GeoJsonLabels } from "./components/GeoJsonLabels";
+export { default as StateLayer } from "./components/states/StateLayer";
+export { default as Shapes } from "./components/Shapes";
+export { default as useMapStore } from "./hooks/useMapStore";
+export { default as useMapSelected } from "./hooks/useMapSelected";
+export { default as useMapHovered } from "./hooks/useMapHovered";

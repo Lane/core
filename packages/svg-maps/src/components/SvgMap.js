@@ -21,7 +21,6 @@ const SvgMap = ({ className, classes, children, ...props }) => {
       {...props}
     >
       {children}
-      <HoverShape className={classes.hover} />
     </ComposableMap>
   );
 };

@@ -37,4 +37,11 @@ HoverShape.propTypes = {
   onSelect: PropTypes.func,
 };
 
-export default withStyles(styles, { name: "HypSvgMapHovered" })(HoverShape);
+export { HoverShape };
+
+/** add the display name */
+const exportComponent = withStyles(styles, { name: "HypSvgMapHoverShape" })(
+  HoverShape
+);
+exportComponent.displayName = "HoverShape";
+export default exportComponent;

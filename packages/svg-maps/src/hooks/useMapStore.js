@@ -1,6 +1,6 @@
 import create from "zustand";
 
-const [useMapStore] = create((set, get) => ({
+const useMapStore = create((set, get) => ({
   hovered: null,
   setHovered: (hovered) => set({ hovered }),
   selected: null,
