@@ -2,7 +2,7 @@
   "name": "@hyperobjekt/mapbox",
   "version": "1.0.9",
   "main": "lib/index.js",
-  "module": "src/index.js",
+  "module": "lib/index.js",
   "dependencies": {
     "@hyperobjekt/hooks": "^1.0.9",
     "@hyperobjekt/us-states": "^1.0.4",

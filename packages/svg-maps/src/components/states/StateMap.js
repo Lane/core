@@ -5,7 +5,10 @@ import SvgMap from "../SvgMap";
 import StateLayer from "./StateLayer";
 import { withStyles } from "@material-ui/styles";
 
-const styles = {};
+const styles = {
+  shape: {},
+  text: {},
+};
 
 /**
  * A simple state level map based on `react-simple-maps`.  This map uses @material-ui/styles for theming.
