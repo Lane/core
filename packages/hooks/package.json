@@ -7,9 +7,5 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "resolutions": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
   "gitHead": "f487865cf7ad733b282b4106f4c2cb4cd2634993"
 }
