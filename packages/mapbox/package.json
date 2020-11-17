@@ -1,6 +1,6 @@
 {
   "name": "@hyperobjekt/mapbox",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "dependencies": {
