@@ -5,7 +5,7 @@
 ### Props
 
 - `defaultViewport`: object containing `zoom`, `latitude`, and `longitude` properties that define the default / reset viewport
-- `style`: overrides the default map style JSON
+- `mapStyle`: mapbox stlye string or map style JSON
 - `sources`: any additional [mapboxgl sources](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/) that should be added to the map
 - `layers`: any additional [mapboxgl layers](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/) to render on the map
 - `hoveredId`: id of the currently hovered feature
