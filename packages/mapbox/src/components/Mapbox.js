@@ -106,6 +106,25 @@ const Mapbox = ({
     (vp) => {
       if (!loaded) return;
       if (vp.zoom && vp.zoom < 2) return;
+      // Patch in support for Mapbox GL viewport.maxBounds, https://github.com/visgl/react-map-gl/issues/442
+      const maxBounds = defaultViewport.maxBounds
+        ? defaultViewport.maxBounds
+        : false;
+      if (!!maxBounds && maxBounds.length > 0) {
+        if (vp.longitude < maxBounds[0][0]) {
+          vp.longitude = maxBounds[0][0];
+        }
+        if (vp.longitude > maxBounds[1][0]) {
+          vp.longitude = maxBounds[1][0];
+        }
+        if (vp.latitude < maxBounds[0][1]) {
+          vp.latitude = maxBounds[0][1];
+        }
+        if (vp.latitude > maxBounds[1][1]) {
+          vp.latitude = maxBounds[1][1];
+        }
+      }
+
       setViewport(vp);
     },
     [setViewport, loaded]

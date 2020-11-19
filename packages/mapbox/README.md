@@ -38,6 +38,24 @@ const CustomMap = (props) => (
 );
 ```
 
+### Setting Map Bounds
+
+Because [react-map-gl doesn't support the `viewport.maxBounds` setting](https://github.com/visgl/react-map-gl/issues/442), support has has been patched in. Pass `maxBounds` on the `defaultViewport` attribute in the form of a [Mapbox LngLatBoundsLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatboundslike) array of arrays, `[[lng,lat], [lng,lat]]`.
+
+```js
+{
+  width: 400,
+  height: 400,
+  latitude: 37.7577,
+  longitude: -122.4376,
+  zoom: 8,
+  maxBounds: [
+   [-107.6, 33.8], // [west, south]
+   [-65, 49.9], // [east, north]
+  ],
+}
+```
+
 # Hooks
 
 A collection of hooks are provided to allow access to map viewport information and manipulation.
