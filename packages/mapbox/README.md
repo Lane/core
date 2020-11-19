@@ -18,6 +18,8 @@
 - `onClick`: handler function for clicking on a feature
 - `onLoad`: handler function for when the map has loaded
 - `MapGLProps`: an object of props to be passed through to the ReactMapGL component (ie. Mapbox API access token)
+- `minZoom`: minimum zoom level for the map (default: 2)
+- `maxBounds`: form of a [Mapbox LngLatBoundsLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatboundslike) array of arrays, `[[lng,lat], [lng,lat]]`.
 
 Any additional props are passed on to the [ReactMapGL Interactive Map](https://visgl.github.io/react-map-gl/docs/api-reference/interactive-map)
 
@@ -40,19 +42,49 @@ const CustomMap = (props) => (
 
 ### Setting Map Bounds
 
-Because [react-map-gl doesn't support the `viewport.maxBounds` setting](https://github.com/visgl/react-map-gl/issues/442), support has has been patched in. Pass `maxBounds` on the `defaultViewport` attribute in the form of a [Mapbox LngLatBoundsLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatboundslike) array of arrays, `[[lng,lat], [lng,lat]]`.
+Use the `maxBounds` prop in the form of a [Mapbox LngLatBoundsLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatboundslike) array of arrays, `[[lng,lat], [lng,lat]]`.
 
 ```js
-{
-  width: 400,
-  height: 400,
-  latitude: 37.7577,
-  longitude: -122.4376,
-  zoom: 8,
-  maxBounds: [
-   [-107.6, 33.8], // [west, south]
-   [-65, 49.9], // [east, north]
-  ],
+const BoundMap = (props) => (
+  <Mapbox
+    defaultViewport={{
+      zoom: 11,
+      latitude: 40.74,
+      longitude: -73.96,
+    }}
+    maxBounds={[
+      [-107.6, 33.8],
+      [-65, 49.9],
+    ]}
+    {...props}
+  />
+);
+```
+
+### Getting the ReactMapGL ref
+
+The component forwards the ref to ReactMapGL ref, so you can get the mapboxgl map for advanced usage.
+
+```js
+const AdvancedMap = (props) => {
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    if (mapRef.current) {
+      // gives you access to StaticMap methods from ReactMapGL
+      // https://visgl.github.io/react-map-gl/docs/api-reference/static-map#methods
+      const map = mapRef.current.getMap()
+      // do something with the map
+    }
+
+  }, [mapRef.current])
+
+  return (
+    <Mapbox
+      ref={mapRef}
+      {...props}
+    >
+  )
 }
 ```
 
@@ -129,7 +161,5 @@ flyToReset();
 This is the store where all the other hooks pull from. You can access parts of the other hooks from this one. Helpful if you want to be able to access a setter but avoid re-renders, for example, with `useMapViewport()`.
 
 ```js
-const setViewport = useMapStore(
-  state => state.setViewport,
-)
+const setViewport = useMapStore((state) => state.setViewport);
 ```

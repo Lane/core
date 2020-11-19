@@ -14,12 +14,12 @@ export default {
       zoom: 11,
       latitude: 40.74,
       longitude: -73.96,
-      // Uncomment to test maxBounds patch.
-      // maxBounds: [
-      //   [-107.6, 33.8],
-      //   [-65, 49.9],
-      // ],
     },
+    maxBounds: [
+      [-107.6, 33.8],
+      [-65, 49.9],
+    ],
+    minZoom: 2,
   },
 };
 
