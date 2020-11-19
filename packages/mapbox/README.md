@@ -17,6 +17,7 @@
 - `onHover`: handler function for hovering over a feature
 - `onClick`: handler function for clicking on a feature
 - `onLoad`: handler function for when the map has loaded
+- `MapGLProps`: an object of props to be passed through to the ReactMapGL component (ie. Mapbox API access token)
 
 Any additional props are passed on to the [ReactMapGL Interactive Map](https://visgl.github.io/react-map-gl/docs/api-reference/interactive-map)
 
@@ -103,4 +104,14 @@ Provides a function that flies the viewport back to the default viewport (set on
 ```js
 const flyToReset = useFlyToReset();
 flyToReset();
+```
+
+## useMapStore()
+
+This is the store where all the other hooks pull from. You can access parts of the other hooks from this one. Helpful if you want to be able to access a setter but avoid re-renders, for example, with `useMapViewport()`.
+
+```js
+const setViewport = useMapStore(
+  state => state.setViewport,
+)
 ```
