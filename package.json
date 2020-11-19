@@ -8,7 +8,6 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js",
     "build:hooks": "lerna exec --scope=\"@hyperobjekt/hooks\" --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js",
-    "publish": "lerna publish",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "workspaces": [
