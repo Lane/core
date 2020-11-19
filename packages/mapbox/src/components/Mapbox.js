@@ -32,8 +32,6 @@ const Mapbox = React.forwardRef(
       mapStyle,
       style: styleOverrides,
       children,
-      idMap,
-      selectedColors,
       defaultViewport,
       maxBounds,
       minZoom,
@@ -67,9 +65,9 @@ const Mapbox = React.forwardRef(
     // function to set the reset viewport
     const setResetViewport = useMapStore((state) => state.setResetViewport);
 
+    // get the map instance from the ref
     const innerRef = React.useRef(null);
     const combinedRef = useCombinedRefs(ref, innerRef);
-    //
     const currentMap = useMemo(
       () =>
         combinedRef.current &&
@@ -165,16 +163,15 @@ const Mapbox = React.forwardRef(
       });
     }, [sizes, setViewport]);
 
-    // set hovered outline when hoveredFeatureId changes
-    useEffect(() => {
-      // console.log("todo: set hovered feature state");
-      // prev &&
-      //   prev.hoveredFeature &&
-      //   setFeatureState(prev.hoveredFeature, {
-      //     hover: false
-      //   })
-      // hoveredFeature && setFeatureState(hoveredFeature.id, { hover: true })
-    }, [hoveredFeature]); // update only when hovered id changes
+    // TODO: set hovered outline when hoveredFeatureId changes
+    // useEffect(() => {
+    //   prev &&
+    //     prev.hoveredFeature &&
+    //     setFeatureState(prev.hoveredFeature, {
+    //       hover: false
+    //     })
+    //   hoveredFeature && setFeatureState(hoveredFeature.id, { hover: true })
+    // }, [hoveredFeature]);
 
     return (
       <div
@@ -220,8 +217,6 @@ const Mapbox = React.forwardRef(
 Mapbox.defaultProps = {
   style: {},
   mapStyle: "mapbox://styles/hyperobjekt/cke1roqr302yq19jnlpc8dgr9",
-  idMap: {},
-  selectedColors: ["#00ff00"],
   MapGLProps: {},
   minZoom: 2,
   ariaLabel: "map",
@@ -235,10 +230,6 @@ Mapbox.propTypes = {
   style: PropTypes.object,
   /** URL to the mapbox style */
   mapStyle: PropTypes.string,
-  /** an object that maps integer feature IDs to the feature property ID */
-  idMap: PropTypes.object,
-  /** array of colors to use for `highlightFeatureIds` */
-  selectedColors: PropTypes.arrayOf(PropTypes.string),
   /** props to pass to the ReactMapGL component  */
   MapGLProps: PropTypes.object,
   /** handler for when an interactive feature layer is hovered */

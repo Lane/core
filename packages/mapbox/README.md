@@ -6,13 +6,7 @@
 
 - `defaultViewport`: object containing `zoom`, `latitude`, and `longitude` properties that define the default / reset viewport
 - `mapStyle`: mapbox stlye string or map style JSON
-- `sources`: any additional [mapboxgl sources](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/) that should be added to the map
-- `layers`: any additional [mapboxgl layers](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/) to render on the map
-- `hoveredId`: id of the currently hovered feature
-- `selectedIds`: ids of any selected features (these receive a "selected" state accessible in the mapboxgl layer style)
 - `children`: any children (e.g. legend)
-- `idMap`: a map of numeric feature ids to feature property ids (for assigning feature state)
-- `selectedColors`: array of colors to assign to "selected" features
 - `ariaLabel`: label for map that is read by screen readers
 - `onHover`: handler function for hovering over a feature
 - `onClick`: handler function for clicking on a feature
