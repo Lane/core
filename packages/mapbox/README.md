@@ -154,6 +154,17 @@ flyToReset();
 
 This is the store where all the other hooks pull from. You can access parts of the other hooks from this one. Helpful if you want to be able to access a setter but avoid re-renders, for example, with `useMapViewport()`.
 
+The following can be retrieved from the store:
+
 ```js
 const setViewport = useMapStore((state) => state.setViewport);
 ```
+
+- `loaded`: true or false, depending on if the map is loaded or not
+- `setLoaded`: setter for loaded state
+- `resetViewport`: the default viewport object
+- `setResetViewport`: setter for reset viewport
+- `viewport`: the current viewport object
+- `setViewport`: setter for current viewport
+- `hoveredFeature`: the currently hovered feature (if any)
+- `setHoveredFeature`: setter for hovered feature
