@@ -34,7 +34,6 @@ const Mapbox = React.forwardRef(
       children,
       defaultViewport,
       maxBounds,
-      minZoom,
       ariaLabel,
       MapGLProps,
       onHover,
@@ -51,10 +50,7 @@ const Mapbox = React.forwardRef(
     );
 
     // hovered feature and setter
-    const [hoveredFeature, setHoveredFeature] = useMapStore(
-      (state) => [state.hoveredFeature, state.setHoveredFeature],
-      shallow
-    );
+    const setHoveredFeature = useMapStore((state) => state.setHoveredFeature);
 
     // resize listener for map size
     const [resizeListener, sizes] = useResizeAware();
@@ -102,7 +98,6 @@ const Mapbox = React.forwardRef(
     const handleViewportChange = useCallback(
       (vp) => {
         if (!loaded) return;
-        if (vp.zoom && vp.zoom < minZoom) vp.zoom = minZoom;
         // Patch in support for Mapbox GL viewport.maxBounds, https://github.com/visgl/react-map-gl/issues/442
         if (!!maxBounds && maxBounds.length > 0) {
           if (vp.longitude < maxBounds[0][0]) {
@@ -120,7 +115,7 @@ const Mapbox = React.forwardRef(
         }
         setViewport(vp);
       },
-      [setViewport, maxBounds, minZoom, loaded]
+      [setViewport, maxBounds, loaded]
     );
 
     // handler for feature hover
@@ -162,16 +157,6 @@ const Mapbox = React.forwardRef(
         height: sizes.height,
       });
     }, [sizes, setViewport]);
-
-    // TODO: set hovered outline when hoveredFeatureId changes
-    // useEffect(() => {
-    //   prev &&
-    //     prev.hoveredFeature &&
-    //     setFeatureState(prev.hoveredFeature, {
-    //       hover: false
-    //     })
-    //   hoveredFeature && setFeatureState(hoveredFeature.id, { hover: true })
-    // }, [hoveredFeature]);
 
     return (
       <div
@@ -218,7 +203,6 @@ Mapbox.defaultProps = {
   style: {},
   mapStyle: "mapbox://styles/hyperobjekt/cke1roqr302yq19jnlpc8dgr9",
   MapGLProps: {},
-  minZoom: 2,
   ariaLabel: "map",
   onHover: () => {},
   onClick: () => {},

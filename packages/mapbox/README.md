@@ -12,7 +12,6 @@
 - `onClick`: handler function for clicking on a feature
 - `onLoad`: handler function for when the map has loaded
 - `MapGLProps`: an object of props to be passed through to the ReactMapGL component (ie. Mapbox API access token)
-- `minZoom`: minimum zoom level for the map (default: 2)
 - `maxBounds`: form of a [Mapbox LngLatBoundsLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatboundslike) array of arrays, `[[lng,lat], [lng,lat]]`.
 
 Any additional props are passed on to the [ReactMapGL Interactive Map](https://visgl.github.io/react-map-gl/docs/api-reference/interactive-map)
