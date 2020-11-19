@@ -159,7 +159,7 @@ const Mapbox = ({
 
   // set hovered outline when hoveredFeatureId changes
   useEffect(() => {
-    console.log("todo: set hovered feature state");
+    // console.log("todo: set hovered feature state");
     // prev &&
     //   prev.hoveredFeature &&
     //   setFeatureState(prev.hoveredFeature, {
