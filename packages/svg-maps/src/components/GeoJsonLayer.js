@@ -5,7 +5,7 @@ import Shapes from "./Shapes";
 import GeoJsonLabels from "./GeoJsonLabels";
 import { Geographies } from "react-simple-maps";
 import useMapHovered from "../hooks/useMapHovered";
-import useMapHovered from "../hooks/useMapSelected";
+import useMapSelected from "../hooks/useMapSelected";
 
 import { withStyles } from "@material-ui/styles";
 
