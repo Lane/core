@@ -31,15 +31,15 @@ const GeoJsonLayer = ({
 }) => {
   const [hovered, setHovered] = useMapHovered();
   const [selected, setSelected] = useMapSelected();
-  const handleHover = (geo) => {
+  const handleHover = (geo, event) => {
     if (!interactive) return;
     setHovered(geo);
-    onHover && onHover(geo);
+    onHover && onHover(geo, event);
   };
-  const handleSelect = (geo) => {
+  const handleSelect = (geo, event) => {
     if (!interactive) return;
     setSelected(geo);
-    onSelect && onSelect(geo);
+    onSelect && onSelect(geo, event);
   };
   return (
     <Geographies
