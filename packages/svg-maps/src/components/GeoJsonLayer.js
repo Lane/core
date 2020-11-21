@@ -5,6 +5,8 @@ import Shapes from "./Shapes";
 import GeoJsonLabels from "./GeoJsonLabels";
 import { Geographies } from "react-simple-maps";
 import useMapHovered from "../hooks/useMapHovered";
+import useMapHovered from "../hooks/useMapSelected";
+
 import { withStyles } from "@material-ui/styles";
 
 const styles = {
@@ -28,7 +30,7 @@ const GeoJsonLayer = ({
   ...props
 }) => {
   const [hovered, setHovered] = useMapHovered();
-  const [selected, setSelected] = useMapHovered();
+  const [selected, setSelected] = useMapSelected();
   const handleHover = (geo) => {
     if (!interactive) return;
     setHovered(geo);
