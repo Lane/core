@@ -1,6 +1,6 @@
 {
   "name": "@hyperobjekt/svg-maps",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "simple svg maps for hyperobjekt projects",
   "main": "lib/index.js",
   "module": "lib/index.js",
