@@ -24,6 +24,8 @@ const Shapes = ({
   geographies,
   onHover,
   onSelect,
+  isHoveredMatch = (geo, hovered) => hovered && geo.rsmKey === hovered.rsmKey,
+  isSelectedMatch = (geo, selected) => selected && geo.rsmKey === selected.rsmKey,
   children,
   ...props
 }) => {
@@ -32,8 +34,8 @@ const Shapes = ({
       {geographies.map((geo) => (
         <Geography
           className={clsx("svg-map__geography", classes.shape, {
-            [classes.hovered]: hovered && geo.rsmKey === hovered.rsmKey,
-            [classes.selected]: selected && geo.rsmKey === selected.rsmKey,
+            [classes.hovered]: isHoveredMatch(geo, hovered),
+            [classes.selected]: isSelectedMatch(geo, selected),
           })}
           key={geo.rsmKey}
           geography={geo}
@@ -58,12 +60,18 @@ Shapes.propTypes = {
   classes: PropTypes.object,
   /** Root class name for the map */
   className: PropTypes.string,
-  /** Determines whether state level labels are shown */
-  showLabels: PropTypes.bool,
+  /** geography currently hovered */
+  hovered: PropTypes.object,
+  /** geography currently selected */
+  selected: PropTypes.object,
   /** handler function for hover events */
   onHover: PropTypes.func,
   /** handler for selecting a location */
   onSelect: PropTypes.func,
+  /** function for determining if a geography matches hovered */
+  isHoveredMatch: PropTypes.func,
+  /** function for determining if a geography matches selected */
+  isSelectedMatch: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HypSvgMapShapes" })(Shapes);
