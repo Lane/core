@@ -1,0 +1,21 @@
+{
+  "name": "@laneolson/legend",
+  "version": "0.0.1",
+  "description": "re-usable legend components",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "author": "Lane Olson <laneolson@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/styles": "^4.10.0",
+    "clsx": "^1.1.1",
+    "d3-axis": "^2.0.0",
+    "d3-color": "^2.0.0",
+    "d3-interpolate": "^2.0.1",
+    "zustand": "^3.1.3"
+  }
+}
